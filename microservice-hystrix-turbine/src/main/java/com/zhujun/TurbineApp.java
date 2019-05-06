@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
  * create time: 2019/4/28 15:32
  */
 @SpringBootApplication
+//Turbine
 @EnableTurbine
 public class TurbineApp {
     public static void main(String[] args) {

@@ -2,7 +2,22 @@ server:
   port: 8030
 
 
+spring:
+  application:
+    name: microservice-hystrix-turbine
+
+#需要聚合监控Hystrix的微服务Id
 turbine:
-  appConfig: microservice1,microservice2
+  appConfig: microservice-consumer-movie,microservice-gateway-zuul
   clusterNameExpression: "default"
+
+#注册到服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:8761/eureka/
+  instance:
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+
 

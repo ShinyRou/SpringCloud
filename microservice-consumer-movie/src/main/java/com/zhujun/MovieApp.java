@@ -16,8 +16,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
+//服务启动断路器的注解或者@EnableCircuitBreaker
 @EnableHystrix
-//@EnableCircuitBreaker
 public class MovieApp {
     public static void main(String[] args) {
         SpringApplication.run(MovieApp.class,args);

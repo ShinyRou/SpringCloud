@@ -6,6 +6,7 @@ spring:
     name: microservice-gateway-zuul
 
 
+#注册到服务注册中心
 eureka:
   client:
     serviceUrl:
@@ -13,3 +14,14 @@ eureka:
   instance:
     ip-address: 127.0.0.1
     prefer-ip-address: true
+
+#actuator 开放所有页面
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  #health显示详情
+  endpoint:
+    health:
+      show-details: always

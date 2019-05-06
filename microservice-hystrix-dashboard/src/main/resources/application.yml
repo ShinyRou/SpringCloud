@@ -2,7 +2,5 @@ server:
   port: 8030
 
 
-turbine:
-  appConfig: microservice1,microservice2
-  clusterNameExpression: "default"
+
 
