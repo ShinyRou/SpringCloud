@@ -1,0 +1,45 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: microservice-provider-user
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://111.231.111.223:3306/springcloud
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    ip-address: 127.0.0.1
+    #将自己ip 注册到eureka
+    prefer-ip-address: true
+    #自定义元数据
+    metadata-map:
+      name: zhujun
+      age: 12
+
+
+#数据库及连接池配置
+# jdbc_config datasource
+
+#jpa参数配置
+  spring:
+    jpa:
+      hibernate:
+        ddl-auto: update
