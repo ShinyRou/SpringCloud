@@ -11,11 +11,11 @@ spring:
       ddl-auto: none
   main:
     allow-bean-definition-overriding: true
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+  #rabbitmq:
+    #host: localhost
+    #port: 5672
+    #username: guest
+    #password: guest
 logging:
   level:
     root: info

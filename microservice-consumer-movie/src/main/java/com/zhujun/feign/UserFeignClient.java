@@ -26,10 +26,10 @@ public interface UserFeignClient {
     public User findById(@PathVariable("id") Long id);
 
     @RequestMapping(value="/get",method = RequestMethod.GET)
-    public String manyParams(@RequestParam Long id,@RequestParam String username);
+    public String manyParams(@RequestParam("id") Long id,@RequestParam("username") String username);
 
     @RequestMapping(value="/get2",method = RequestMethod.GET)
-    public String manyParams2(@RequestParam Map<String,Object> map);
+    public String manyParams2(@RequestParam("map") Map<String,Object> map);
 
     @RequestMapping(value="/post",method = RequestMethod.POST)
     public String manyParams3(@RequestBody User user);
