@@ -1,6 +1,18 @@
 server:
-  port: 8030
+  port: 8040
 
+spring:
+  application:
+    name: microservice-hystrix-dashboard
 
-
+#注册到服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    #将自己ip 注册到eureka
+    prefer-ip-address: true
 
