@@ -1,0 +1,22 @@
+server:
+  port: 8091
+
+Spring:
+  application:
+    name: microservice-file-upload
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 200MB
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    ip-address: 127.0.0.1
+    #将自己ip 注册到eureka
+    prefer-ip-address: true
+
