@@ -28,31 +28,8 @@ management:
 
 
 
-#{"/microservice-consumer-movie/**":"microservice-consumer-movie","/microservice-provider-user/**":"microservice-provider-user"}
-zuul:
-  #忽略的服务  '*'
-  ignored-services: microservice-consumer-movie
-  #忽略所有包含admin的路径
-  ignored-patterns: /**/admin**/
-  #指定微服务 路由
-  routes:
-    microservice-provider-user: /user/**
 
-  #user-routes 自定义路由名  访问/user/**  将会映射到http://localhost:8081/
-  #这种路由方式不会使用RIbbon 与 Hystrix 不支持负载均衡
-    user-routes:
-      path: /user/**
-      url: http://localhost:8081/
-    user-routes-id:
-      path: /user/**
-      serviceId: microservice-consumer-movie
-
-
-#支持负载均衡的方式
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
-  eureka:
-    enabled: false
-microservice-provider-user:
-  ribbon:
-    listOfServers: localhost:8081,localhost:8080
-
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

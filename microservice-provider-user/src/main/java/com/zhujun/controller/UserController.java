@@ -43,6 +43,12 @@ public class UserController {
     @RequestMapping(value="/post",method = RequestMethod.POST)
     public String manyParams3(@RequestBody User user){
 
-        return user.getUsername();
+        return user.getUserName();
+    }
+
+
+    @RequestMapping(value="/test")
+    public String test( User user){
+        return user.toString();
     }
 }

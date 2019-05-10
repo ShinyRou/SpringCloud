@@ -26,7 +26,7 @@ public class User {
     private Long id;
 
     @Column
-    private String username;
+    private String userName;
 
     @Column
     private String name;

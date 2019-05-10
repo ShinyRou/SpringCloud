@@ -26,6 +26,11 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
             <version>RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!--查看hystrix.stream-->
         <!--<dependency>
             <groupId>org.springframework.boot</groupId>
