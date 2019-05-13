@@ -1,0 +1,26 @@
+server:
+  port: 8092
+
+#注册到配置eurake
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    ip-address: 127.0.0.1
+    #将自己ip 注册到eureka
+    prefer-ip-address: true
+
+#整合非JVM服务,健康检查接口uri,ip,port
+sidecar:
+  health-uri: http://localhost:8094/health
+  ip-address: localhost
+  port: 8094
+
+
+#服务名
+spring:
+  application:
+    name: microservice-sidecar

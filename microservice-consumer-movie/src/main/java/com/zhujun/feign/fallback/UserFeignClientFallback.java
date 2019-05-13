@@ -12,7 +12,7 @@ import java.util.Map;
  * description: TODO
  * create time: 2019/3/28 14:19
  */
-@Component
+
 public class UserFeignClientFallback implements UserFeignClient {
     @Override
     public User findById(Long id) {

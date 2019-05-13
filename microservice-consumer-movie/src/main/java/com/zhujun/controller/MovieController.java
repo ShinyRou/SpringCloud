@@ -93,6 +93,18 @@ public class MovieController {
 
     }
 
+    //测试调用非JVM的服务
+    @HystrixCommand(fallbackMethod ="testSidecarFallback")
+    @GetMapping("/testSidecar")
+    public String testNoJVMService(){
+        return restTemplate.getForObject("http://microservice-sidecar/health",String.class);
+    }
+
+
+    public String testSidecarFallback(){
+        return "consumer movie 调用 sidecar 集成的服务失败";
+    }
+
 
 
 }
