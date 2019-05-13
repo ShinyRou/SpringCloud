@@ -1,0 +1,26 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+       git:
+         uri: https://github.com/ShinyRou/SpringCloud.git
+         username: zhu632761783@gmail.com
+         password: zhujun08130925
+
+
+#注册到配置eurake
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    ip-address: 127.0.0.1
+    #将自己ip 注册到eureka
+    prefer-ip-address: true
