@@ -2,21 +2,19 @@ server:
   port: 8099
 
 spring:
+  profiles:
+    active: native
   application:
     name: microservice-config-server
   cloud:
     config:
       server:
-       git:
+       #git:
         #本地Git仓库
-         uri: file://C:\Users\Byron\Desktop\properties
-        #远程Git仓库
-        # uri: https://github.com/ShinyRou/SpringCloud.git
-        # username: zhu632761783@gmail.com
-        # password: zhujun08130925
-        #配置从本地读取配置文件
-       #native:
-         #search-locations: C:/Users/Byron/Desktop/properties/
+         #uri: file://C:\Users\Byron\Desktop\properties
+         #{application}/{profile}名称 如果没有则使用上面的uri属性
+         #clone-on-start: true
+       native: file://C:\Users\Byron\Desktop\properties
 #注册到配置eurake
 eureka:
   client:
