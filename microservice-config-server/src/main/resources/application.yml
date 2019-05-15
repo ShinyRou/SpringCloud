@@ -8,11 +8,15 @@ spring:
     config:
       server:
        git:
-         uri: https://github.com/ShinyRou/SpringCloud.git
-         username: zhu632761783@gmail.com
-         password: zhujun08130925
-
-
+        #本地Git仓库
+         uri: file://C:\Users\Byron\Desktop\properties
+        #远程Git仓库
+        # uri: https://github.com/ShinyRou/SpringCloud.git
+        # username: zhu632761783@gmail.com
+        # password: zhujun08130925
+        #配置从本地读取配置文件
+       #native:
+         #search-locations: C:/Users/Byron/Desktop/properties/
 #注册到配置eurake
 eureka:
   client:

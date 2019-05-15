@@ -1,0 +1,13 @@
+spring:
+  application:
+    #对应Config Server中的｛applicationName｝
+    name: microservice-foo
+
+  cloud:
+    config:
+      #Config Server 地址
+      uri: http://localhost:8099
+      #对应Config Server中的｛profile｝
+      profile: dev
+      #Git仓库中的分支
+      label: master
